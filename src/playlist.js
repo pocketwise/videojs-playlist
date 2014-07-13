@@ -2,7 +2,14 @@ _V_.PlaylistEngine = _V_.Class.extend({
   init: function(player, videos) {
     this.player = player;
     this.videos = videos;
-    this.currentIndex = 0;
+    this.currentIndex = 0;    
+    /* uncomment this block to enable auto play next video
+    * @pocketwise
+    var that = this;
+    this.player.addEvent("ended", function() {
+        that.next();
+    });
+    */
   },
 
   play: function(index) {
